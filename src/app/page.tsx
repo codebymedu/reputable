@@ -54,16 +54,7 @@ const LandingPage = () => {
           coming next and share your suggestions.
         </li>
       </ul>
-      <h2 className="text-2xl font-bold mt-6 mb-4">Development Plan</h2>
-      <p className="mb-4">
-        Our journey starts with creating a landing page to gather email
-        addresses, followed by:
-      </p>
-      <ul className="list-disc pl-8 mb-4">
-        <li>Developing an MVP</li>
-        <li>Engaging with users via social media</li>
-        <li>Adding new features based on your feedback</li>
-      </ul>
+
       <h2 className="text-2xl font-bold mt-6 mb-4">Contact</h2>
       <p className="mb-4">
         Created by Meduard Krasniqi - for any inquiries, reach out via

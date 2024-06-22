@@ -29,14 +29,6 @@ Interested in early access or want to help shape the future of **Reputable**? He
 - **Try our MVP**: We're looking for the first 100 users to try our platform and provide feedback.
 - **Follow our Public Roadmap**: Stay updated with what's coming next and share your suggestions.
 
-## Development Plan
-
-Our journey starts with creating a landing page to gather email addresses, followed by:
-
-- Developing an MVP
-- Engaging with users via social media
-- Adding new features based on your feedback
-
 ## Contact
 
 Created by Meduard Krasniqi - for any inquiries, reach out via contact@codebymedu.com.
