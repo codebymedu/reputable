@@ -46,12 +46,12 @@ const LandingPage = () => {
       <h2 className="text-2xl font-bold mt-6 mb-4">Getting Involved</h2>
       <ul className="list-disc pl-8 mb-4">
         <li>
-          <strong>Try our MVP</strong>: We're looking for the first 100 users to
-          try our platform and provide feedback.
+          <strong>Try our MVP</strong>: We&apos;re looking for the first 100
+          users to try our platform and provide feedback.
         </li>
         <li>
-          <strong>Follow our Public Roadmap</strong>: Stay updated with what's
-          coming next and share your suggestions.
+          <strong>Follow our Public Roadmap</strong>: Stay updated with
+          what&apos;s coming next and share your suggestions.
         </li>
       </ul>
 
