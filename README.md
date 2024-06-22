@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Reputable - Coming Soon
 
-## Getting Started
+Welcome to **Reputable**—the simplest way to build a professional portfolio online. Tailored for content creators, **Reputable** allows you to create your personal or business portfolio with ease, integrating everything from services to product showcases, without any need for technical know-how.
 
-First, run the development server:
+## Status
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Check out current development status directly in
+[reputable.so](https://reputable.so)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Instant Portfolio Creation**: Jump into our editor without signing up and see how easy it is to create.
+- **Custom Components**: Includes products, services, meeting setups, email subscriptions, and social media content integration from platforms like Instagram, TikTok, and YouTube.
+- **AI-Driven Templates**: Use AI to generate beautiful portfolios tailored to your needs.
+- **Flexible Payment Options**: Accept payments via cryptocurrency or Stripe.
+- **Advanced Analytics**: Track how your portfolio performs with our built-in analytics.
+- **No-Fee Premium Option**: Upgrade to remove fees, remove branding, use a custom domain, and access premium templates.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technology Stack
 
-## Learn More
+- **Frontend**: NextJS, TipTap
+- **Backend**: Supabase
+- **Hosting**: Vercel
 
-To learn more about Next.js, take a look at the following resources:
+## Getting Involved
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Interested in early access or want to help shape the future of **Reputable**? Here's how you can get involved:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Try our MVP**: We're looking for the first 100 users to try our platform and provide feedback.
+- **Follow our Public Roadmap**: Stay updated with what's coming next and share your suggestions.
 
-## Deploy on Vercel
+## Development Plan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Our journey starts with creating a landing page to gather email addresses, followed by:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Developing an MVP
+- Engaging with users via social media
+- Adding new features based on your feedback
+
+## Contact
+
+Created by Meduard Krasniqi - for any inquiries, reach out via contact@codebymedu.com.
+
+## Acknowledgments
+
+Inspired by services like tally.so, aiming to bring simplicity and efficiency to portfolio creation.
