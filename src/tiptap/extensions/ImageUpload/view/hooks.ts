@@ -9,18 +9,23 @@ export const useUploader = ({
 }) => {
   const [loading, setLoading] = useState(false);
 
-  const uploadFile = useCallback(async () => {
-    setLoading(true);
-    try {
-      const url = await API.uploadImage();
+  const uploadFile = useCallback(
+    async (image: File) => {
+      setLoading(true);
 
-      onUpload(url);
-    } catch (errPayload: any) {
-      const error = errPayload?.response?.data?.error || "Something went wrong";
-      toast.error(error);
-    }
-    setLoading(false);
-  }, [onUpload]);
+      try {
+        const url = await API.uploadImage(image);
+
+        onUpload(url);
+      } catch (errPayload: any) {
+        const error =
+          errPayload?.response?.data?.error || "Something went wrong";
+        toast.error(error);
+      }
+      setLoading(false);
+    },
+    [onUpload]
+  );
 
   return { loading, uploadFile };
 };
