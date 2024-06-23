@@ -25,11 +25,10 @@ export const EmptyStatePlaceholder = ({
   return (
     <div className="absolute top-16 w-full h-[400px] bg-white left-0 flex flex-col justify-center items-center  ">
       <p>
-        Build a{" "}
+        Show them you are{" "}
         <code className="bg-primary text-white px-1 font-semibold">
-          Reputable
-        </code>{" "}
-        portfolio!
+          Reputable!
+        </code>
       </p>
 
       <p>

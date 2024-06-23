@@ -30,18 +30,14 @@ export const ImageBlockView = (props: ImageBlockViewProps) => {
     editor.commands.setNodeSelection(getPos());
   }, [getPos, editor.commands]);
 
+  console.log({ src });
+
   return (
     <NodeViewWrapper>
       <div className={wrapperClassName} style={{ width: node.attrs.width }}>
         <div contentEditable={false} ref={imageWrapperRef}>
-          <Image
-            className="block"
-            src={src}
-            alt=""
-            onClick={onClick}
-            width={600}
-            height={400}
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="block" src={src} alt="" onClick={onClick} />
         </div>
       </div>
     </NodeViewWrapper>
