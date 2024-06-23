@@ -1,6 +1,6 @@
 import { Editor, useEditor as useTipTapEditor } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
-import { extensions } from "@reputable/components/editor/extensions/extensions";
+import { ExtensionKit } from "@reputable/tiptap/extensions/extension-kit";
 
 declare global {
   interface Window {
@@ -12,7 +12,7 @@ export const useEditor = () => {
   const editor = useTipTapEditor({
     autofocus: true,
 
-    extensions: [StarterKit, ...extensions],
+    extensions: [...ExtensionKit()],
     editorProps: {
       attributes: {
         autocomplete: "off",
