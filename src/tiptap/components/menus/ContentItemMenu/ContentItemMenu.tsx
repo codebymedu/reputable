@@ -7,7 +7,7 @@ import { Surface } from "@reputable/tiptap/components/ui/Surface";
 import { DropdownButton } from "@reputable/tiptap/components/ui/Dropdown";
 import useContentItemActions from "./hooks/useContentItemActions";
 import { useData } from "./hooks/useData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export type ContentItemMenuProps = {
   editor: Editor;
@@ -27,6 +27,7 @@ export const ContentItemMenu = ({ editor }: ContentItemMenuProps) => {
       <Toolbar.Button onClick={actions.handleAdd}>
         <Icon name="Plus" />
       </Toolbar.Button>
+
       <Popover.Root open={menuOpen} onOpenChange={setMenuOpen}>
         <Popover.Trigger asChild>
           <Toolbar.Button>
