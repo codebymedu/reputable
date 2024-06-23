@@ -23,7 +23,7 @@ export const EmptyStatePlaceholder = ({
   }
 
   return (
-    <div className="absolute top-16 w-full h-[400px] bg-white left-0 flex flex-col justify-center items-center  ">
+    <div className="absolute top-16 w-screen h-[400px] bg-white z-50 left-0 flex flex-col justify-center items-center  ">
       <p>
         Show them you are{" "}
         <code className="bg-primary text-white px-1 font-semibold">

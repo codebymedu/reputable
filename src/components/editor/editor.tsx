@@ -34,12 +34,10 @@ export const Editor = () => {
   return (
     <div className="flex h-full w-full relative" ref={menuContainerRef}>
       <div className="relative flex flex-col flex-1  overflow-hidden h-screen ">
+        <EmptyStatePlaceholder editor={editor} />
         <Header isSidebarOpen={sidebar.isOpen} toggleSidebar={sidebar.toggle} />
 
         <EditorContent editor={editor} className="flex-1 overflow-y-auto " />
-
-        <EmptyStatePlaceholder editor={editor} />
-
         <ContentItemMenu editor={editor} />
         <LinkMenu editor={editor} appendTo={menuContainerRef} />
         <TextMenu editor={editor} />
