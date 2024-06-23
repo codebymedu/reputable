@@ -1,6 +1,8 @@
 import { Button } from "@reputable/components/ui/button";
 import { Editor } from "@tiptap/react";
+import { RocketIcon } from "@radix-ui/react-icons";
 import { useEffect } from "react";
+import Link from "next/link";
 
 type EmptyStatePlaceholderProps = { editor: Editor };
 
@@ -21,7 +23,7 @@ export const EmptyStatePlaceholder = ({
   }
 
   return (
-    <div className="absolute top-16 w-full h-96 bg-white left-0 flex flex-col justify-center items-center  ">
+    <div className="absolute top-16 w-full h-[400px] bg-white left-0 flex flex-col justify-center items-center  ">
       <p>
         Build a{" "}
         <code className="bg-primary text-white px-1 font-semibold">
@@ -49,6 +51,24 @@ export const EmptyStatePlaceholder = ({
         <Button variant="outline" onClick={() => alert(1)}>
           Use a template
         </Button>
+      </div>
+
+      <div className="flex mt-12 flex-col gap-3 items-center">
+        <h3 className="text-md font-bold flex items-center gap-2">
+          <RocketIcon height={16} width={16} className="text-neutral-600" />{" "}
+          What&apos;s next?
+        </h3>
+        <p>
+          Amazing features are coming soon.{" "}
+          <Link
+            target="_blank"
+            href="https://prairie-teeth-3bf.notion.site/Roadmap-b61d0bb8bfe146ea8b6c321d0a334f3e"
+            className="underline"
+          >
+            Click here
+          </Link>{" "}
+          to see what&apos;s next!
+        </p>
       </div>
     </div>
   );
