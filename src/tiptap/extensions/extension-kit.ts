@@ -39,11 +39,17 @@ import { CodeBlockLowlight } from "@tiptap/extension-code-block-lowlight";
 import { ImageUpload } from "./ImageUpload";
 import { lowlight } from "lowlight";
 import { History as TiptapHistory } from "@tiptap/extension-history";
+import { Emoji } from "@tiptap-pro/extension-emoji";
+import { emojiSuggestion } from "./EmojiSuggestion";
 
 export const ExtensionKit = () => [
   Document,
   Columns,
   TaskList,
+  Emoji.configure({
+    enableEmoticons: true,
+    suggestion: emojiSuggestion,
+  }),
   TaskItem.configure({
     nested: true,
   }),
