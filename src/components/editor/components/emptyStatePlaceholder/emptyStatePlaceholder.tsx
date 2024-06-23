@@ -59,7 +59,7 @@ export const EmptyStatePlaceholder = ({
           What&apos;s next?
         </h3>
         <p>
-          Amazing features are coming soon.{" "}
+          Reputable serves its community.{" "}
           <Link
             target="_blank"
             href="https://prairie-teeth-3bf.notion.site/Roadmap-b61d0bb8bfe146ea8b6c321d0a334f3e"
