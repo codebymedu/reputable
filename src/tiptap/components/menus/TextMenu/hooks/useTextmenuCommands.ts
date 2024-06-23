@@ -4,104 +4,72 @@ import { useCallback } from "react";
 export const useTextmenuCommands = (editor: Editor) => {
   const onBold = useCallback(
     () => editor.chain().focus().toggleBold().run(),
-    [editor],
+    [editor]
   );
   const onItalic = useCallback(
     () => editor.chain().focus().toggleItalic().run(),
-    [editor],
+    [editor]
   );
   const onStrike = useCallback(
     () => editor.chain().focus().toggleStrike().run(),
-    [editor],
+    [editor]
   );
   const onUnderline = useCallback(
     () => editor.chain().focus().toggleUnderline().run(),
-    [editor],
+    [editor]
   );
   const onCode = useCallback(
     () => editor.chain().focus().toggleCode().run(),
-    [editor],
+    [editor]
   );
   const onCodeBlock = useCallback(
     () => editor.chain().focus().toggleCodeBlock().run(),
-    [editor],
+    [editor]
   );
 
   const onSubscript = useCallback(
     () => editor.chain().focus().toggleSubscript().run(),
-    [editor],
+    [editor]
   );
   const onSuperscript = useCallback(
     () => editor.chain().focus().toggleSuperscript().run(),
-    [editor],
+    [editor]
   );
   const onAlignLeft = useCallback(
     () => editor.chain().focus().setTextAlign("left").run(),
-    [editor],
+    [editor]
   );
   const onAlignCenter = useCallback(
     () => editor.chain().focus().setTextAlign("center").run(),
-    [editor],
+    [editor]
   );
   const onAlignRight = useCallback(
     () => editor.chain().focus().setTextAlign("right").run(),
-    [editor],
+    [editor]
   );
   const onAlignJustify = useCallback(
     () => editor.chain().focus().setTextAlign("justify").run(),
-    [editor],
+    [editor]
   );
 
   const onChangeColor = useCallback(
     (color: string) => editor.chain().setColor(color).run(),
-    [editor],
+    [editor]
   );
   const onClearColor = useCallback(
     () => editor.chain().focus().unsetColor().run(),
-    [editor],
+    [editor]
   );
 
   const onChangeHighlight = useCallback(
     (color: string) => editor.chain().setHighlight({ color }).run(),
-    [editor],
+    [editor]
   );
   const onClearHighlight = useCallback(
     () => editor.chain().focus().unsetHighlight().run(),
-    [editor],
+    [editor]
   );
 
-  const onSimplify = useCallback(
-    () => editor.chain().focus().aiSimplify().run(),
-    [editor],
-  );
-  const onEmojify = useCallback(
-    () => editor.chain().focus().aiEmojify().run(),
-    [editor],
-  );
-  const onCompleteSentence = useCallback(
-    () => editor.chain().focus().aiComplete().run(),
-    [editor],
-  );
-  const onFixSpelling = useCallback(
-    () => editor.chain().focus().aiFixSpellingAndGrammar().run(),
-    [editor],
-  );
-  const onMakeLonger = useCallback(
-    () => editor.chain().focus().aiExtend().run(),
-    [editor],
-  );
-  const onMakeShorter = useCallback(
-    () => editor.chain().focus().aiShorten().run(),
-    [editor],
-  );
-  const onTldr = useCallback(
-    () => editor.chain().focus().aiTldr().run(),
-    [editor],
-  );
-  const onTone = useCallback(
-    (tone: string) => editor.chain().focus().aiAdjustTone(tone).run(),
-    [editor],
-  );
   const onLink = useCallback(
     (url: string, inNewTab?: boolean) =>
       editor
@@ -109,7 +77,7 @@ export const useTextmenuCommands = (editor: Editor) => {
         .focus()
         .setLink({ href: url, target: inNewTab ? "_blank" : "" })
         .run(),
-    [editor],
+    [editor]
   );
 
   const onSetFont = useCallback(
@@ -119,7 +87,7 @@ export const useTextmenuCommands = (editor: Editor) => {
       }
       return editor.chain().focus().setFontFamily(font).run();
     },
-    [editor],
+    [editor]
   );
 
   const onSetFontSize = useCallback(
@@ -129,7 +97,7 @@ export const useTextmenuCommands = (editor: Editor) => {
       }
       return editor.chain().focus().setFontSize(fontSize).run();
     },
-    [editor],
+    [editor]
   );
 
   return {
@@ -151,14 +119,6 @@ export const useTextmenuCommands = (editor: Editor) => {
     onClearHighlight,
     onSetFont,
     onSetFontSize,
-    onSimplify,
-    onEmojify,
-    onCompleteSentence,
-    onFixSpelling,
-    onMakeLonger,
-    onMakeShorter,
-    onTldr,
-    onTone,
     onLink,
   };
 };

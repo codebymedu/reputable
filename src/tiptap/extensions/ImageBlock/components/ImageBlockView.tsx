@@ -1,6 +1,7 @@
 import { cn } from "@reputable/tiptap/lib/utils";
 import { Node } from "@tiptap/pm/model";
 import { Editor, NodeViewWrapper } from "@tiptap/react";
+import Image from "next/image";
 import { useCallback, useRef } from "react";
 
 interface ImageBlockViewProps {
@@ -33,7 +34,14 @@ export const ImageBlockView = (props: ImageBlockViewProps) => {
     <NodeViewWrapper>
       <div className={wrapperClassName} style={{ width: node.attrs.width }}>
         <div contentEditable={false} ref={imageWrapperRef}>
-          <img className="block" src={src} alt="" onClick={onClick} />
+          <Image
+            className="block"
+            src={src}
+            alt=""
+            onClick={onClick}
+            width={600}
+            height={400}
+          />
         </div>
       </div>
     </NodeViewWrapper>

@@ -1,24 +1,10 @@
-import { Button } from "@reputable/components/button/button";
+import { Button } from "@reputable/components/ui/button";
 import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
 } from "@reputable/components/tooltip/tooltip";
 import { GearIcon } from "@radix-ui/react-icons";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@reputable/components/dropdown/dropdown";
 
 type HeaderProps = {
   isSidebarOpen: boolean;
@@ -26,7 +12,7 @@ type HeaderProps = {
 };
 export const Header = ({ isSidebarOpen, toggleSidebar }: HeaderProps) => {
   return (
-    <div className=" flex flex-row items-center justify-end flex-none py-2 pl-6 pr-3 text-black bg-white border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-800">
+    <div className="gap-4 flex flex-row items-center justify-end flex-none py-2 pl-6 pr-3 text-black bg-white border-b border-neutral-200 dark:bg-black dark:text-white dark:border-neutral-800">
       <Tooltip>
         <TooltipTrigger asChild>
           <Button onClick={toggleSidebar} variant="ghost">
@@ -38,6 +24,8 @@ export const Header = ({ isSidebarOpen, toggleSidebar }: HeaderProps) => {
           <p>Settings</p>
         </TooltipContent>
       </Tooltip>
+
+      <Button>Publish</Button>
     </div>
   );
 };
