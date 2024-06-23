@@ -1,5 +1,4 @@
 import { Editor, useEditor as useTipTapEditor } from "@tiptap/react";
-import { StarterKit } from "@tiptap/starter-kit";
 import { ExtensionKit } from "@reputable/tiptap/extensions/extension-kit";
 
 declare global {

@@ -30,8 +30,6 @@ export const ImageBlockView = (props: ImageBlockViewProps) => {
     editor.commands.setNodeSelection(getPos());
   }, [getPos, editor.commands]);
 
-  console.log({ src });
-
   return (
     <NodeViewWrapper>
       <div className={wrapperClassName} style={{ width: node.attrs.width }}>

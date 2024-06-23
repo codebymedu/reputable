@@ -1,7 +1,5 @@
 "use client";
 
-import { HocuspocusProvider } from "@hocuspocus/provider";
-
 import {
   BlockquoteFigure,
   CharacterCount,
@@ -40,6 +38,7 @@ import {
 import { CodeBlockLowlight } from "@tiptap/extension-code-block-lowlight";
 import { ImageUpload } from "./ImageUpload";
 import { lowlight } from "lowlight";
+import { History as TiptapHistory } from "@tiptap/extension-history";
 
 export const ExtensionKit = () => [
   Document,
@@ -63,6 +62,7 @@ export const ExtensionKit = () => [
     history: false,
     codeBlock: false,
   }),
+  TiptapHistory.configure({}),
   CodeBlockLowlight.configure({
     lowlight,
     defaultLanguage: null,
