@@ -7,10 +7,32 @@ import {
 import { Label } from "@reputable/components/ui/label";
 import { Input } from "@reputable/components/ui/input";
 import { Button } from "@reputable/components/ui/button";
+import { useFormState } from "react-dom";
+import { createUser } from "@reputable/actions/auth/signUpActions";
 
-export const SignUpCredentialsForm = () => {
+type SignUpCredentialsFormProps = { handleNextStep: () => void };
+
+export const SignUpCredentialsForm = ({
+  handleNextStep,
+}: SignUpCredentialsFormProps) => {
+  // --- STATE ---
+
+  const [formState, dispatchCreateUser] = useFormState(
+    (state: Awaited<ReturnType<typeof createUser>>, formState: FormData) =>
+      createUser(state, formState).then((updatedFormState) => {
+        if (updatedFormState.status === "success") {
+          handleNextStep();
+        }
+
+        return updatedFormState;
+      }),
+    { status: null }
+  );
+
+  // --- RENDER ---
+
   return (
-    <form action={() => console.log("ran")}>
+    <form action={dispatchCreateUser}>
       <CardHeader className="space-y-1 text-center">
         <CardTitle className="text-2xl">Create your account</CardTitle>
 
@@ -27,30 +49,42 @@ export const SignUpCredentialsForm = () => {
 
         <p className="text-center w-full my-4">or</p>
 
+        {formState?.errors?.general?.[0] && (
+          <p className="text-red-500 text-xs mt-1">
+            {formState?.errors?.general?.[0]}
+          </p>
+        )}
+
         <div className="space-y-5">
           <div>
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
+              name="email"
               placeholder="Enter your email"
               className="w-full"
+              errorMessage={formState.errors?.email?.[0]}
             />
           </div>
 
           <div>
-            <Label htmlFor="email">Password</Label>
+            <Label htmlFor="password">Password</Label>
 
             <Input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Enter your password"
               className="w-full"
+              errorMessage={formState.errors?.password?.[0]}
             />
           </div>
         </div>
 
-        <Button className="w-full mt-6">Create Account</Button>
+        <Button type="submit" className="w-full mt-6">
+          Create Account
+        </Button>
       </CardContent>
     </form>
   );

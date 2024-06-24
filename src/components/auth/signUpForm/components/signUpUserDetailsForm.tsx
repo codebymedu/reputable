@@ -21,7 +21,7 @@ export const SignUpUserDetailsForm = () => (
     </CardHeader>
 
     <CardContent className="space-y-4">
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="name">What should we call you?</Label>
 
         <Input
@@ -32,7 +32,7 @@ export const SignUpUserDetailsForm = () => (
         />
       </div>
 
-      <div>
+      <div className="space-y-2">
         <Label htmlFor="portfolio" className="items-center flex gap-2 mb-1">
           What should your page URL be?{" "}
           <Tooltip>

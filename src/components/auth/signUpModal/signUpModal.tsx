@@ -15,7 +15,7 @@ export const SignUpModal = ({ trigger }: SignUpModalProps) => {
     <Dialog>
       <DialogTrigger>{trigger}</DialogTrigger>
 
-      <DialogContent className="p-0">
+      <DialogContent isFullScreen className=" p-0">
         <VisuallyHidden>
           <DialogTitle>Create your account</DialogTitle>
         </VisuallyHidden>

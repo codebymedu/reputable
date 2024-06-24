@@ -17,8 +17,16 @@ export const SignUpForm = ({ isModal }: SignUpFormProps) => {
   // --- HELPERS ---
 
   const formStep = {
-    credentials: <SignUpCredentialsForm />,
-    confirmMail: <SignUpConfirmMailForm />,
+    credentials: (
+      <SignUpCredentialsForm
+        handleNextStep={() => setCurrentStep("confirmMail")}
+      />
+    ),
+    confirmMail: (
+      <SignUpConfirmMailForm
+        handleNextStep={() => setCurrentStep("userDetails")}
+      />
+    ),
     userDetails: <SignUpUserDetailsForm />,
   };
 

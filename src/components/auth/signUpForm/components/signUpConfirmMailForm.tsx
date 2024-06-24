@@ -12,11 +12,15 @@ import {
   InputOTPSlot,
 } from "@reputable/components/ui/input-otp";
 
-export const SignUpConfirmMailForm = () => {
+type SignUpConfirmMailFormProps = { handleNextStep: () => void };
+
+export const SignUpConfirmMailForm = ({
+  handleNextStep,
+}: SignUpConfirmMailFormProps) => {
   // TODO: this must be authorized
 
   return (
-    <form action={() => console.log("confirm mail")}>
+    <form action={() => handleNextStep()}>
       <CardHeader className="space-y-1 text-center">
         <CardTitle className="text-2xl">Confirm your email</CardTitle>
 
@@ -26,8 +30,8 @@ export const SignUpConfirmMailForm = () => {
         </CardDescription>
       </CardHeader>
 
-      <CardContent>
-        <div>
+      <CardContent className="">
+        <div className="">
           <Label htmlFor="code">Confirmation Code</Label>
 
           <InputOTP maxLength={6} pattern="^[0-9]+$" className="mt-2">
