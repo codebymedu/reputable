@@ -23,7 +23,7 @@ export const EmptyStatePlaceholder = ({
   }
 
   return (
-    <div className="absolute top-16 w-screen h-[400px] bg-white z-50 left-0 flex flex-col justify-center items-center  ">
+    <div className="absolute top-16 px-4 w-screen h-[400px] bg-white z-50 left-0 flex flex-col justify-center items-center  ">
       <p>
         Show them you are{" "}
         <code className="bg-primary text-white px-1 font-semibold">
@@ -36,7 +36,7 @@ export const EmptyStatePlaceholder = ({
         blocks or start with a template.
       </p>
 
-      <div className="flex gap-4 items-center mt-8">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center mt-8">
         <Button
           variant="outline"
           onClick={() => {
@@ -52,7 +52,7 @@ export const EmptyStatePlaceholder = ({
         </Button>
       </div>
 
-      <div className="flex mt-12 flex-col gap-3 items-center">
+      <div className="flex mt-12 flex-col gap-3 items-center text-center">
         <h3 className="text-md font-bold flex items-center gap-2">
           <RocketIcon height={16} width={16} className="text-neutral-600" />{" "}
           What&apos;s next?

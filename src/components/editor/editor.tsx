@@ -47,7 +47,7 @@ export const Editor = () => {
         <ImageBlockMenu editor={editor} appendTo={menuContainerRef} />
       </div>
 
-      <Sidebar isOpen={sidebar.isOpen} />
+      <Sidebar isOpen={sidebar.isOpen} handleClose={sidebar.close} />
     </div>
   );
 };
