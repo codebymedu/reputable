@@ -38,15 +38,6 @@ export const SignUpForm = ({ isModal }: SignUpFormProps) => {
         className={cn("w-full max-w-md", isModal && "border-0 shadow-none")}
       >
         {formStep[currentStep]}
-
-        <CardFooter>
-          <p className="w-full text-center text-sm">
-            Already have an account?{" "}
-            <Link className="underline" href="/login">
-              Log in
-            </Link>
-          </p>
-        </CardFooter>
       </Card>
     </div>
   );

@@ -3,12 +3,14 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
 } from "@reputable/components/ui/card";
 import { Label } from "@reputable/components/ui/label";
 import { Input } from "@reputable/components/ui/input";
 import { Button } from "@reputable/components/ui/button";
 import { useFormState } from "react-dom";
 import { createUser } from "@reputable/actions/auth/signUpActions";
+import Link from "next/link";
 
 type SignUpCredentialsFormProps = { handleNextStep: () => void };
 
@@ -43,7 +45,7 @@ export const SignUpCredentialsForm = ({
 
       <CardContent>
         <Button variant="outline" className="w-full gap-2 flex">
-          <GoogleIcon className="mr-2 h-4 w-4" />
+          <GoogleIcon />
           Sign up with Google
         </Button>
 
@@ -86,11 +88,20 @@ export const SignUpCredentialsForm = ({
           Create Account
         </Button>
       </CardContent>
+
+      <CardFooter>
+        <p className="w-full text-center text-sm">
+          Already have an account?{" "}
+          <Link className="underline" href="/login">
+            Log in
+          </Link>
+        </p>
+      </CardFooter>
     </form>
   );
 };
 
-function GoogleIcon(props: any) {
+function GoogleIcon() {
   return (
     <svg
       fill="#000000"

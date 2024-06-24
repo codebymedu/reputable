@@ -2,22 +2,32 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardContent,
 } from "@reputable/components/ui/card";
-import { Label } from "@reputable/components/ui/label";
-import { Button } from "@reputable/components/ui/button";
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSlot,
-} from "@reputable/components/ui/input-otp";
+import { useEffect } from "react";
+import { createClient } from "@reputable/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 type SignUpConfirmMailFormProps = { handleNextStep: () => void };
 
 export const SignUpConfirmMailForm = ({
   handleNextStep,
 }: SignUpConfirmMailFormProps) => {
-  // TODO: this must be authorized
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+      console.log({ event });
+      if (event === "SIGNED_IN") {
+        router.push("/home");
+      }
+    });
+
+    return () => {
+      data.subscription.unsubscribe();
+    };
+  }, []);
 
   return (
     <form action={() => handleNextStep()}>
@@ -25,31 +35,12 @@ export const SignUpConfirmMailForm = ({
         <CardTitle className="text-2xl">Confirm your email</CardTitle>
 
         <CardDescription>
-          We&apos;ve sent a confirmation code to your email address. Enter the
-          code below to verify your account.
+          We&apos;ve sent a confirmation code to your email address. Please
+          click the link in your email to activate your account and publish your
+          portfolio.
+          <p className="mt-4">Your portfolio has been saved!</p>
         </CardDescription>
       </CardHeader>
-
-      <CardContent className="">
-        <div className="">
-          <Label htmlFor="code">Confirmation Code</Label>
-
-          <InputOTP maxLength={6} pattern="^[0-9]+$" className="mt-2">
-            <InputOTPGroup>
-              <InputOTPSlot index={0} />
-              <InputOTPSlot index={1} />
-              <InputOTPSlot index={2} />
-              <InputOTPSlot index={3} />
-              <InputOTPSlot index={4} />
-              <InputOTPSlot index={5} />
-            </InputOTPGroup>
-          </InputOTP>
-        </div>
-
-        <Button type="submit" className="w-full mt-6">
-          Confirm
-        </Button>
-      </CardContent>
     </form>
   );
 };
