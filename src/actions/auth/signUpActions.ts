@@ -30,13 +30,9 @@ export const createUser = async (
 
   const { error } = await supabase.auth.signUp(validatedFields.data);
 
-  console.log({ error });
-
   if (error) {
     return { status: "error", errors: { general: [error.message] } };
   }
-
-  // create user
 
   return { status: "success" };
 };

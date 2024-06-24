@@ -17,8 +17,7 @@ export const SignUpConfirmMailForm = ({
   useEffect(() => {
     const supabase = createClient();
 
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      console.log({ event });
+    const { data } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_IN") {
         router.push("/home");
       }
@@ -35,10 +34,11 @@ export const SignUpConfirmMailForm = ({
         <CardTitle className="text-2xl">Confirm your email</CardTitle>
 
         <CardDescription>
-          We&apos;ve sent a confirmation code to your email address. Please
-          click the link in your email to activate your account and publish your
-          portfolio.
-          <p className="mt-4">Your portfolio has been saved!</p>
+          We&apos;ve sent an email to you. Click the link there to activate your
+          account.
+          <p className="mt-4 text-red-400">
+            No email will be sent if this account exists already.
+          </p>
         </CardDescription>
       </CardHeader>
     </form>
