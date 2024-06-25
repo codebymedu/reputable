@@ -14,5 +14,9 @@ export default async function Home() {
     redirect("/login");
   }
 
+  if (!data?.user.user_metadata.display_name) {
+    redirect("/setup");
+  }
+
   return <>Home</>;
 }

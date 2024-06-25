@@ -16,7 +16,7 @@ export default async function Setup() {
   }
 
   if (data?.user.user_metadata.display_name) {
-    return notFound();
+    redirect("/home");
   }
 
   // --- RENDER ---
