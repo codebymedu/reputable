@@ -16,19 +16,38 @@ import {
 import { Button } from "@reputable/components/ui/button";
 import { useFormState } from "react-dom";
 import { setupPortfolio } from "@reputable/actions/setupActions";
+import { redirect } from "next/navigation";
+import { useToast } from "@reputable/components/ui/use-toast";
 
 export const SetupForm = () => {
+  const { toast } = useToast();
+
   // --- STATE ---
 
-  const [formState, dispatchSetupPortfolio] = useFormState(setupPortfolio, {
-    status: null,
-  });
+  const [formState, dispatchSetupPortfolio] = useFormState(
+    (formState: unknown, formData: FormData) =>
+      setupPortfolio(formState, formData).then((results) => {
+        if (results.status === "success") {
+          toast({
+            title: "You've successfully setup your portfolio!",
+            className: "bg-green-300 border-0",
+          });
+
+          redirect("/home");
+        }
+
+        return results;
+      }),
+    {
+      status: null,
+    }
+  );
 
   // --- RENDER ---
 
   return (
     <form action={dispatchSetupPortfolio}>
-      <CardHeader className="space-y-1 text-center">
+      <CardHeader className="space-y-1 text-center ">
         <CardTitle className="text-2xl">Last step!</CardTitle>
       </CardHeader>
 

@@ -15,9 +15,9 @@ export default async function Setup() {
     redirect("/login");
   }
 
-  // if (data?.user.user_metadata.display_name) {
-  //   return notFound();
-  // }
+  if (data?.user.user_metadata.display_name) {
+    return notFound();
+  }
 
   // --- RENDER ---
 
