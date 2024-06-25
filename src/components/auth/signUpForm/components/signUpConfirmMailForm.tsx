@@ -7,11 +7,7 @@ import { useEffect } from "react";
 import { createClient } from "@reputable/lib/supabase/client";
 import { useRouter } from "next/navigation";
 
-type SignUpConfirmMailFormProps = { handleNextStep: () => void };
-
-export const SignUpConfirmMailForm = ({
-  handleNextStep,
-}: SignUpConfirmMailFormProps) => {
+export const SignUpConfirmMailForm = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -28,8 +24,10 @@ export const SignUpConfirmMailForm = ({
     };
   }, []);
 
+  // --- RENDER ---
+
   return (
-    <form action={() => handleNextStep()}>
+    <form>
       <CardHeader className="space-y-1 text-center">
         <CardTitle className="text-2xl">Confirm your email</CardTitle>
 
@@ -37,7 +35,7 @@ export const SignUpConfirmMailForm = ({
           We&apos;ve sent an email to you. Click the link there to activate your
           account.
           <p className="mt-4 text-red-400">
-            No email will be sent if this account exists already.
+            No email will be sent if this account already exists.
           </p>
         </CardDescription>
       </CardHeader>

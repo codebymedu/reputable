@@ -4,7 +4,6 @@ import { Card, CardFooter } from "@reputable/components/ui/card";
 import Link from "next/link";
 import { cn } from "@reputable/lib/utils";
 import { SignUpCredentialsForm } from "@reputable/components/auth/signUpForm/components/signUpCredentialsForm";
-import { SignUpUserDetailsForm } from "@reputable/components/auth/signUpForm/components/signUpUserDetailsForm";
 import { SignUpConfirmMailForm } from "@reputable/components/auth/signUpForm/components/signUpConfirmMailForm";
 import { useState } from "react";
 
@@ -22,12 +21,7 @@ export const SignUpForm = ({ isModal }: SignUpFormProps) => {
         handleNextStep={() => setCurrentStep("confirmMail")}
       />
     ),
-    confirmMail: (
-      <SignUpConfirmMailForm
-        handleNextStep={() => setCurrentStep("userDetails")}
-      />
-    ),
-    userDetails: <SignUpUserDetailsForm />,
+    confirmMail: <SignUpConfirmMailForm />,
   };
 
   // --- RENDER ---
