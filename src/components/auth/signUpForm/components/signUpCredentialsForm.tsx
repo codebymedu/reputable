@@ -11,6 +11,7 @@ import { Button } from "@reputable/components/ui/button";
 import { useFormState } from "react-dom";
 import { createUser } from "@reputable/actions/auth/signUpActions";
 import Link from "next/link";
+import { SignUpCredentialsFormSubmitButton } from "@reputable/components/auth/signUpForm/components/signUpCredentialsFormSubmitButton";
 
 type SignUpCredentialsFormProps = { handleNextStep: () => void };
 
@@ -84,9 +85,7 @@ export const SignUpCredentialsForm = ({
           </div>
         </div>
 
-        <Button type="submit" className="w-full mt-6">
-          Create Account
-        </Button>
+        <SignUpCredentialsFormSubmitButton />
       </CardContent>
 
       <CardFooter>

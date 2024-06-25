@@ -13,11 +13,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@reputable/components/ui/tooltip";
-import { Button } from "@reputable/components/ui/button";
 import { useFormState } from "react-dom";
 import { setupPortfolio } from "@reputable/actions/setupActions";
 import { redirect } from "next/navigation";
 import { useToast } from "@reputable/components/ui/use-toast";
+import { SetupFormSubmitButton } from "@reputable/components/app/setupFormSubmitButton";
 
 export const SetupForm = () => {
   const { toast } = useToast();
@@ -99,9 +99,7 @@ export const SetupForm = () => {
           )}
         </div>
 
-        <Button type="submit" className="w-full mt-6">
-          Publish
-        </Button>
+        <SetupFormSubmitButton />
       </CardContent>
     </form>
   );
