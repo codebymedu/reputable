@@ -12,12 +12,16 @@ import { useFormState } from "react-dom";
 import { createUser } from "@reputable/actions/auth/signUpActions";
 import Link from "next/link";
 import { SignUpCredentialsFormSubmitButton } from "@reputable/components/auth/signUpForm/components/signUpCredentialsFormSubmitButton";
+import { createClient } from "@reputable/lib/supabase/client";
+import { MouseEventHandler } from "react";
 
 type SignUpCredentialsFormProps = { handleNextStep: () => void };
 
 export const SignUpCredentialsForm = ({
   handleNextStep,
 }: SignUpCredentialsFormProps) => {
+  const supabase = createClient();
+
   // --- STATE ---
 
   const [formState, dispatchCreateUser] = useFormState(
@@ -32,6 +36,19 @@ export const SignUpCredentialsForm = ({
     { status: null }
   );
 
+  const handleGoogleSignUp: MouseEventHandler<HTMLButtonElement> = async (
+    event
+  ) => {
+    event.preventDefault();
+
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `https://reputable.so/auth/callback`,
+      },
+    });
+  };
+
   // --- RENDER ---
 
   return (
@@ -45,7 +62,11 @@ export const SignUpCredentialsForm = ({
       </CardHeader>
 
       <CardContent>
-        <Button variant="outline" className="w-full gap-2 flex">
+        <Button
+          variant="outline"
+          className="w-full gap-2 flex"
+          onClick={handleGoogleSignUp}
+        >
           <GoogleIcon />
           Sign up with Google
         </Button>
