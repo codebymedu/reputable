@@ -27,13 +27,11 @@ export async function GET(request: Request) {
       }
     );
     const { error } = await supabase.auth.exchangeCodeForSession(code);
-    console.error({ error, origin });
+
     if (!error) {
       return NextResponse.redirect(`${origin}${next}`);
     }
   }
-
-  console.error({ code, origin });
 
   return NextResponse.redirect(`${origin}/login`);
 }
