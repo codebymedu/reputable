@@ -1,6 +1,6 @@
 import { SetupForm } from "@reputable/components/app/setupForm";
 import { createClient } from "@reputable/lib/supabase/server";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default async function Setup() {
   const supabase = createClient();

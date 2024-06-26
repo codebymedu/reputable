@@ -56,9 +56,7 @@ export const SignUpCredentialsForm = ({
       <CardHeader className="space-y-1 text-center">
         <CardTitle className="text-2xl">Create your account</CardTitle>
 
-        <CardDescription>
-          Show the world your personal page in minutes.
-        </CardDescription>
+        <CardDescription>Let the fun begin!</CardDescription>
       </CardHeader>
 
       <CardContent>
